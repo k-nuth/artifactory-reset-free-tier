@@ -20,7 +20,7 @@ jobs:
       - name: Download Conan secp256k1/0.7.0 from knuth
         run: |
           conan remote add knuth https://knuth.jfrog.io/artifactory/api/conan/knuth --force
-          conan install -r knuth secp256k1/0.7.0@kth/staging --update --build=secp256k1
+          conan install secp256k1/0.7.0@kth/staging --update --build=secp256k1
       - name: Download counter
         run: |
           # curl -H "Authorization: Bearer ${{ secrets.JFROG_TOKEN }}" https://atlantean.jfrog.io/artifactory/api/storage/atlantean/_/doctest/2.4.4/_/0/export/conan_export.tgz?stats
