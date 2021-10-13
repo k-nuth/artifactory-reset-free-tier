@@ -2,7 +2,7 @@ name: Artifactory Reset Free Tier
 on:
   push:
   schedule:
-  - cron: '* * * * *'
+  - cron: '0 * * * *'
 jobs:
   knuth:
     runs-on: ubuntu-latest
