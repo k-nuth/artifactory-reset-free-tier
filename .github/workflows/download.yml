@@ -18,16 +18,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install kthbuild
           pip install conan
-      - name: Download Conan secp256k1/0.12.0 from knuth
+      - name: Download Conan secp256k1/0.14.0 from knuth
         run: |
           conan config install https://github.com/k-nuth/ci-utils/raw/master/conan/config.zip
           conan profile update settings.compiler.libcxx=libstdc++11 default
           conan remote add knuth https://knuth.jfrog.io/artifactory/api/conan/knuth --force
-          conan install secp256k1/0.12.0@kth/staging --update --build=secp256k1
+          conan install secp256k1/0.14.0@kth/staging --update --build=secp256k1
       - name: Download counter
         run: |
           # curl -H "Authorization: Bearer ${{ secrets.JFROG_TOKEN }}" https://atlantean.jfrog.io/artifactory/api/storage/atlantean/_/doctest/2.4.4/_/0/export/conan_export.tgz?stats
-          curl https://knuth.jfrog.io/artifactory/api/storage/knuth/kth/secp256k1/0.12.0/staging/0/export/conan_export.tgz?stats
+          curl https://knuth.jfrog.io/artifactory/api/storage/knuth/kth/secp256k1/0.14.0/staging/0/export/conan_export.tgz?stats
   taocpp:
     runs-on: ubuntu-latest
     steps:
