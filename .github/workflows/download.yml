@@ -17,7 +17,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install --upgrade pip
           pip install kthbuild
-          pip install conan
+          pip install "conan>=1.59,<2.0"
       - name: Download Conan secp256k1/0.14.0 from knuth
         run: |
           conan config install https://github.com/k-nuth/ci-utils/raw/master/conan/config.zip
@@ -45,7 +45,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install kthbuild
-          pip install conan
+          pip install "conan>=1.59,<2.0"
       - name: Download Conan algorithm/0.1.239 from taocpp
         run: |
           conan remote add taocpp https://taocpp.jfrog.io/artifactory/api/conan/tao --force
